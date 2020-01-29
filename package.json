@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "prettier": "node node_modules/prettier/bin-prettier.js --write './**/*.{ts,tsx,js,jsx}'",
     "build": "react-scripts build",
     "eject": "react-scripts eject",
     "sort": "node_modules/sort-package-json/cli.js",
@@ -41,6 +42,7 @@
     "@testing-library/user-event": "^7.1.2",
     "@types/jest": "^24.0.0",
     "json-server": "^0.15.1",
+    "prettier": "^1.19.1",
     "react-scripts": "3.3.0",
     "sort-package-json": "^1.39.1"
   }

@@ -1,7 +1,20 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { useEffect } from "react";
+
+const getTitle = (pathname: string): string => {
+  const menuMap = {
+    home: { title: "SmartLyrics" },
+    about: { title: "About" }
+  };
+  return menuMap[window.location.pathname.substr(1)];
+};
 
 export function Menu() {
+  useEffect(() => {
+    document.title = getTitle(window.location.pathname);
+  });
+
   return (
     <Router>
       <div>
@@ -13,9 +26,6 @@ export function Menu() {
             <li>
               <Link to="/about">About</Link>
             </li>
-            <li>
-              <Link to="/users">Users</Link>
-            </li>
           </ul>
         </nav>
 
@@ -24,9 +34,6 @@ export function Menu() {
         <Switch>
           <Route path="/about">
             <About />
-          </Route>
-          <Route path="/users">
-            <Users />
           </Route>
           <Route path="/">
             <Home />
@@ -42,8 +49,4 @@ function Home() {
 
 function About() {
   return <h2>About</h2>;
-}
-
-function Users() {
-  return <h2>Users</h2>;
 }

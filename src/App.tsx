@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import {Menu} from "./shared/menu";
 
 import logo from "./logo.svg";
 import "./App.css";
@@ -21,6 +21,7 @@ const App = () => {
         >
           Learn React
         </a>
+        <Menu/>
       </header>
     </div>
   );

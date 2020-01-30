@@ -8,6 +8,7 @@ import { Header } from "./components/header";
 
 const App = () => {
   return (
+    <div className="container">
     <Router>
       <Helmet>
         <meta charSet="utf-8" />
@@ -16,6 +17,7 @@ const App = () => {
       <Header />
       <Page />
     </Router>
+    </div>
   );
 };
 

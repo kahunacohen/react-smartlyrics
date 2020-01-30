@@ -2,21 +2,8 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 
-//import { useEffect } from "react";
-
-// const getTitle = (pathname: string): string => {
-//   const menuMap = {
-//     home: { title: "SmartLyrics" },
-//     about: { title: "About" }
-//   };
-//   return menuMap[window.location.pathname.substr(1)];
-// };
 
 export function Menu() {
-  // useEffect(() => {
-  //   document.title = getTitle(window.location.pathname);
-  // });
-
   return (
     <Router>
       <div>

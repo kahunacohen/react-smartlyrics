@@ -14,7 +14,6 @@ const App = () => {
         </Helmet>
         <Menu />
       </header>
-      <div>Body</div>
     </div>
   );
 };

@@ -1,6 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import { Helmet } from "react-helmet";
+
+import {About} from "../screens/about";
+import {Home} from "../screens/home";
 
 
 export function Menu() {
@@ -31,23 +33,4 @@ export function Menu() {
       </div>
     </Router>
   );
-}
-function Home() {
-  return (
-    <div>
-      <Helmet>
-        <title>Home</title>
-      </Helmet>
-      <h2>Home</h2>
-    </div>
-  );
-}
-
-function About() {
-  return (<div>
-    <Helmet>
-      <title>About</title>
-    </Helmet>
-    <h2>About</h2>
-  </div>);
 }

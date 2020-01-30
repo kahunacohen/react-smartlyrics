@@ -10,7 +10,7 @@ const App = () => {
       <header className="App-header">
         <Helmet>
           <meta charSet="utf-8" />
-          <link rel="canonical" href="http://mysite.com/example" />
+          <link rel="canonical" href="https://smartlyrics.com" />
         </Helmet>
         <Menu />
       </header>

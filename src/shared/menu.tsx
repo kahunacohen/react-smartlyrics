@@ -1,19 +1,21 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import { useEffect } from "react";
+import { Helmet } from "react-helmet";
 
-const getTitle = (pathname: string): string => {
-  const menuMap = {
-    home: { title: "SmartLyrics" },
-    about: { title: "About" }
-  };
-  return menuMap[window.location.pathname.substr(1)];
-};
+//import { useEffect } from "react";
+
+// const getTitle = (pathname: string): string => {
+//   const menuMap = {
+//     home: { title: "SmartLyrics" },
+//     about: { title: "About" }
+//   };
+//   return menuMap[window.location.pathname.substr(1)];
+// };
 
 export function Menu() {
-  useEffect(() => {
-    document.title = getTitle(window.location.pathname);
-  });
+  // useEffect(() => {
+  //   document.title = getTitle(window.location.pathname);
+  // });
 
   return (
     <Router>
@@ -44,9 +46,21 @@ export function Menu() {
   );
 }
 function Home() {
-  return <h2>Home</h2>;
+  return (
+    <div>
+      <Helmet>
+        <title>Home</title>
+      </Helmet>
+      <h2>Home</h2>
+    </div>
+  );
 }
 
 function About() {
-  return <h2>About</h2>;
+  return (<div>
+    <Helmet>
+      <title>About</title>
+    </Helmet>
+    <h2>About</h2>
+  </div>);
 }

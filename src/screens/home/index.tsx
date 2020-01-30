@@ -1,7 +1,6 @@
 import { Helmet } from "react-helmet";
 import React from "react";
 
-
 export const Home = () => {
   return (
     <div>
@@ -12,4 +11,4 @@ export const Home = () => {
       <p>Home</p>
     </div>
   );
-}
+};

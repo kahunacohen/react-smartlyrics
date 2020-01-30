@@ -1,11 +1,10 @@
 import { Helmet } from "react-helmet";
 import React from "react";
+import { BrowserRouter as Router } from "react-router-dom";
 
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { Page } from "./components/page";
 
-import { About } from "./screens/about";
-import { Home } from "./screens/home";
-
+import { Header } from "./components/header";
 
 const App = () => {
   return (
@@ -14,30 +13,8 @@ const App = () => {
         <meta charSet="utf-8" />
         <link rel="canonical" href="https://smartlyrics.com" />
       </Helmet>
-      <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-          </ul>
-        </nav>
-        <div id="page">
-          {/* A <Switch> looks through its children <Route>s and
-      renders the first one that matches the current URL. */}
-          <Switch>
-            <Route path="/about">
-              <About />
-            </Route>
-            <Route path="/">
-              <Home />
-            </Route>
-          </Switch>
-        </div>
-      </div>
+      <Header />
+      <Page />
     </Router>
   );
 };

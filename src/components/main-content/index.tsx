@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 
 import { About } from "../../screens/about";
-import { Home } from "../../screens/home";
+import { Songs } from "../../screens/songs";
 
 export const MainContent = () => {
   return (
@@ -14,7 +14,7 @@ export const MainContent = () => {
           <About />
         </Route>
         <Route path="/">
-          <Home />
+          <Songs />
         </Route>
       </Switch>
     </div>

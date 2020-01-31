@@ -1,8 +1,6 @@
 import { Helmet } from "react-helmet";
 import React from "react";
-import { Button } from 'reactstrap';
-
-
+import { Button } from "reactstrap";
 
 export const Home = () => {
   return (

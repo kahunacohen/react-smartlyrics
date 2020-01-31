@@ -4,7 +4,7 @@ import { Route, Switch } from "react-router-dom";
 import { About } from "../../screens/about";
 import { Home } from "../../screens/home";
 
-export const Page = () => {
+export const MainContent = () => {
   return (
     <div id="page">
       {/* A <Switch> looks through its children <Route>s and

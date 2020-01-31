@@ -1,4 +1,3 @@
-import { Helmet } from "react-helmet";
 import React from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 
@@ -11,8 +10,12 @@ const App = () => {
     <div className="container">
       <Router>
         <Head />
-        <Header />
-        <MainContent />
+        <div className="row">
+          <Header />
+        </div>
+        <div className="row">
+          <MainContent />
+        </div>
       </Router>
     </div>
   );

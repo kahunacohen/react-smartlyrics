@@ -1,8 +1,14 @@
 import { Helmet } from "react-helmet";
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { connect } from "react-redux";
 import { Button } from "reactstrap";
 
-export const Songs = () => {
+import { fetchSongs } from "../../store/actions";
+
+export const SongsUnconnected = (props: any) => {
+  useEffect(() => {
+    props.fetchData("http://localhost:3000/songs");
+  }, [props]);
   return (
     <div>
       <Helmet>
@@ -14,3 +20,20 @@ export const Songs = () => {
     </div>
   );
 };
+
+const mapStateToProps = (state: any) => {
+  return {
+    songs: state.songs,
+    fetchingSongsHasErrored: state.fetchingSongsHasErrored,
+    fetchingSongsAreLoading: state.fetchingSongsAreLoading
+  };
+};
+
+const mapDispatchToProps = (dispatch: Function) => {
+  return {
+    fetchData: (url: string) => dispatch(fetchSongs(url))
+  };
+};
+
+const Songs = connect(mapStateToProps, mapDispatchToProps)(SongsUnconnected);
+export default Songs;

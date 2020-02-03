@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
 import {
-  SONGS_ARE_LOADING,
+  FETCHING_SONGS_ARE_LOADING,
   FETCHING_SONGS_HAS_ERRORED,
   FETCHING_SONGS_HAS_SUCCEEDED
 } from "../actions";
@@ -15,7 +15,7 @@ export const fetchingSongsHasErrored = (state = false, action: any) => {
 };
 export const songsAreLoading = (state = false, action: any) => {
   switch (action.type) {
-    case SONGS_ARE_LOADING:
+    case FETCHING_SONGS_ARE_LOADING:
       return action.isLoading;
     default:
       return state;

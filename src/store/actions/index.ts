@@ -1,5 +1,5 @@
 import fetch from "node-fetch";
-import { ChordProSong } from "../../types";
+//import { ChordProSong } from "../../types";
 
 export const FETCHING_SONGS_HAS_ERRORED: string = "FETCHING_SONGS_HAS_ERRORED";
 export const fetchingSongsHasErrored = (bool: boolean) => {
@@ -9,10 +9,10 @@ export const fetchingSongsHasErrored = (bool: boolean) => {
   };
 };
 
-export const SONGS_ARE_LOADING: string = "SONGS_ARE_LOADING";
+export const FETCHING_SONGS_ARE_LOADING: string = "FETCHING_SONGS_ARE_LOADING";
 export const fetchingSongsIsLoading = (bool: boolean) => {
   return {
-    type: SONGS_ARE_LOADING,
+    type: FETCHING_SONGS_ARE_LOADING,
     isLoading: bool
   };
 };
@@ -26,7 +26,7 @@ export const fetchingSongsHasSucceeded = (items: Array<any>) => {
   };
 };
 
-const fetchSongs = (url: string) => {
+export const fetchSongs = (url: string) => {
   return async (dispatch: Function) => {
     dispatch(fetchingSongsIsLoading(true));
     try {
@@ -34,13 +34,11 @@ const fetchSongs = (url: string) => {
       if (!resp.ok) {
         throw Error(resp.statusText);
       }
-      console.log(resp);
+      const data = await resp.json();
+      dispatch(fetchingSongsHasSucceeded(data));
     } catch (_) {
       dispatch(fetchingSongsHasErrored(true));
-
     }
     dispatch(fetchingSongsIsLoading(false));
-    //dispatch(fetchingSongsHasSucceeded(resp.json()))
-
   };
 };

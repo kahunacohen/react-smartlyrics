@@ -1,7 +1,15 @@
 {
-  "songs": [
-    { "items": [{"title": "Hide Your Love Way", "artist": "The Beatles"}]}
-  ],
+  "songs": {
+    "links": {
+      "self": "http://localhost:3000/songs",
+      "next": "http://localhost:3000/songs?page=2",
+      "previous": null
+    },
+    "count": 1,
+    "data": [
+      {"kind": "song", "title": "Hide Your Love Way", "artist": "The Beatles"}
+    ]
+  },
   "comments": [
     { "id": 1, "body": "some comment", "postId": 1 }
   ],

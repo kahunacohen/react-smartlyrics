@@ -1,7 +1,7 @@
-import React from "react";
 import { Helmet } from "react-helmet";
+import React from 'react';
 
-export const About = () => {
+export const About = (props: any) => {
   return (
     <div>
       <Helmet>

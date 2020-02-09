@@ -1,19 +1,41 @@
 import { Helmet } from "react-helmet";
-import React  from "react";
-import { Button } from "reactstrap";
+import React, { useEffect } from "react";
+import { itemsFetchData } from "../../store/actions";
+import { useDispatch, useSelector } from "react-redux";
+import { ListGroup, ListGroupItem } from 'reactstrap';
+import {Song} from "../../types"
 
 
-const Songs = (props: any) => {
+const Songs = () => {
+  const items = useSelector((state: any) => state.items);
+  const dispatch = useDispatch();
+  useEffect(() => { 
+    dispatch(itemsFetchData("http://localhost:3000/songs"));
+  }, [dispatch]);
+  console.log(items);
+
   return (
     <div>
       <Helmet>
         <title>Songs</title>
       </Helmet>
       <h2>Songs</h2>
-      <p>Songs</p>
-      <Button color="danger">Danger!</Button>
+     
+    
+      <ListGroup>
+     
+      </ListGroup>
+      
+
     </div>
   );
 };
-
 export default Songs;
+
+// const mapStateToProps = (state: any) => {
+//   return {
+//     items: state.items,
+//     hasErrored: state.itemsHasErrored,
+//     isLoading: state.itemsIsLoading
+//   };
+// };

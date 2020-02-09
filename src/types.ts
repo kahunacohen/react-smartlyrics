@@ -1,3 +1,3 @@
-export interface ChordProSong {
+export interface Song {
   title: string;
 }

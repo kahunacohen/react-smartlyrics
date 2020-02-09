@@ -22,7 +22,7 @@ const Songs = () => {
       <ListGroup>
         {items.data &&
           items.data.map((song: Song, i: number) => {
-            return <ListGroupItem key={i}>{song.title}</ListGroupItem>;
+            return <ListGroupItem key={i}>{song.title} {song.artist}</ListGroupItem>;
           })}
       </ListGroup>
     </div>

@@ -19,25 +19,13 @@ const Songs = () => {
         <title>Songs</title>
       </Helmet>
       <h2>Songs</h2>
-
       <ListGroup>
-        {items.data ? (
+        {items.data &&
           items.data.map((song: Song, i: number) => {
             return <ListGroupItem key={i}>{song.title}</ListGroupItem>;
-          })
-        ) : (
-          <p>foo</p>
-        )}
+          })}
       </ListGroup>
     </div>
   );
 };
 export default Songs;
-
-// const mapStateToProps = (state: any) => {
-//   return {
-//     items: state.items,
-//     hasErrored: state.itemsHasErrored,
-//     isLoading: state.itemsIsLoading
-//   };
-// };

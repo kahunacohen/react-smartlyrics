@@ -2,14 +2,13 @@ import { Helmet } from "react-helmet";
 import React, { useEffect } from "react";
 import { itemsFetchData } from "../../store/actions";
 import { useDispatch, useSelector } from "react-redux";
-import { ListGroup, ListGroupItem } from 'reactstrap';
-import {Song} from "../../types"
-
+import { ListGroup, ListGroupItem } from "reactstrap";
+import { Song } from "../../types";
 
 const Songs = () => {
   const items = useSelector((state: any) => state.items);
   const dispatch = useDispatch();
-  useEffect(() => { 
+  useEffect(() => {
     dispatch(itemsFetchData("http://localhost:3000/songs"));
   }, [dispatch]);
   console.log(items);
@@ -20,13 +19,16 @@ const Songs = () => {
         <title>Songs</title>
       </Helmet>
       <h2>Songs</h2>
-     
-    
-      <ListGroup>
-     
-      </ListGroup>
-      
 
+      <ListGroup>
+        {items.data ? (
+          items.data.map((song: Song, i: number) => {
+            return <ListGroupItem key={i}>{song.title}</ListGroupItem>;
+          })
+        ) : (
+          <p>foo</p>
+        )}
+      </ListGroup>
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet";
-import React from 'react';
+import React from "react";
 
 export const About = (props: any) => {
   return (

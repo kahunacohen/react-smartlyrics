@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet";
 import React, { useEffect } from "react";
 import { itemsFetchData } from "../../store/actions";
 import { useDispatch, useSelector } from "react-redux";
-import { Table } from "reactstrap";
+import { FormGroup, Input, Table } from "reactstrap";
 import { Song } from "../../types";
 
 const Songs = () => {
@@ -22,17 +22,23 @@ const Songs = () => {
       <Table>
         <thead>
           <tr>
+            <th>My Song</th>
             <th>Title</th>
-            <th>Artist</th>
+            <th>Composer</th>
           </tr>
         </thead>
         <tbody>
-          {items.data &&
-            items.data.map((song: Song, i: number) => {
+          {items.length > 0 &&
+            items.map((song: Song, i: number) => {
               return (
                 <tr key={i}>
-                  <td>{song.title}</td>
-                  <td>{song.artist}</td>
+                  <td>
+                    <FormGroup check>
+                      <Input type="checkbox" name="check" id="exampleCheck" />
+                    </FormGroup>
+                  </td>
+                  <td><a href={`/songs/${song.id}`} >{song.title}</a></td>
+                  <td>{song.composer}</td>
                 </tr>
               );
             })}

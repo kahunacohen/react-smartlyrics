@@ -3,6 +3,7 @@ import { Route, Switch } from "react-router-dom";
 
 import { About } from "../../screens/about";
 import Songs from "../../screens/songs";
+import Song from "../../screens/song";
 
 export const MainContent = () => {
   return (
@@ -12,6 +13,9 @@ export const MainContent = () => {
       <Switch>
         <Route path="/about">
           <About />
+        </Route>
+        <Route path="/songs/:id">
+          <Song />
         </Route>
         <Route path="/">
           <Songs />

@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import { itemsFetchData } from "../../store/actions";
 import { useDispatch, useSelector } from "react-redux";
 import { FormGroup, Input, Table } from "reactstrap";
-import { Song } from "../../types";
+import { SongI } from "../../types";
 
 const Songs = () => {
   const items = useSelector((state: any) => state.items);
@@ -29,7 +29,7 @@ const Songs = () => {
         </thead>
         <tbody>
           {items.length > 0 &&
-            items.map((song: Song, i: number) => {
+            items.map((song: SongI, i: number) => {
               return (
                 <tr key={i}>
                   <td>
@@ -37,7 +37,9 @@ const Songs = () => {
                       <Input type="checkbox" name="check" id="exampleCheck" />
                     </FormGroup>
                   </td>
-                  <td><a href={`/songs/${song.id}`} >{song.title}</a></td>
+                  <td>
+                    <a href={`/songs/${song.id}`}>{song.title}</a>
+                  </td>
                   <td>{song.composer}</td>
                 </tr>
               );

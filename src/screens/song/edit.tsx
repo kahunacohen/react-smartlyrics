@@ -18,7 +18,7 @@ const Detail = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(itemsFetchData(`http://localhost:3000/songs/${id}`));
-  }, [dispatch, id, itemsIsLoading]);
+  }, [dispatch, id]);
   return (
     <div>
       <Helmet>
@@ -37,7 +37,6 @@ const Detail = () => {
           ></div>
         </div>
       )}
-      {itemsIsLoading && <div>Loading data...</div>}
     </div>
   );
 };

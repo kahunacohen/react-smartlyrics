@@ -1,17 +1,11 @@
-import ChordSheetJS from "chordsheetjs";
 import { Helmet } from "react-helmet";
 import React, {  useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { itemsFetchData } from "../../store/actions";
 import { useDispatch, useSelector } from "react-redux";
+import { parseChordProToHtml } from "../../utils";
 
 
-const parseChordProToHtml = (chordPro: Array<string>) =>  {
-  return new ChordSheetJS.HtmlTableFormatter()
-    .format(new ChordSheetJS.ChordProParser()
-    .parse(chordPro
-    .join("\n")));
-}  
 
 const Song = () => {
   let { id } = useParams();

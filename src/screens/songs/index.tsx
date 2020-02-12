@@ -18,11 +18,10 @@ const Songs = () => {
       <Helmet>
         <title>Songs</title>
       </Helmet>
-      <h2>Songs</h2>
       <Table>
         <thead>
           <tr>
-            <th>My Song</th>
+            <th></th>
             <th>Title</th>
             <th>Composer</th>
           </tr>
@@ -33,9 +32,7 @@ const Songs = () => {
               return (
                 <tr key={i}>
                   <td>
-                    <FormGroup check>
-                      <Input type="checkbox" name="check" id="exampleCheck" />
-                    </FormGroup>
+                    <a href={`/songs/${song.id}/edit`}>Edit</a>
                   </td>
                   <td>
                     <a href={`/songs/${song.id}`}>{song.title}</a>

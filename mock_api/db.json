@@ -6,6 +6,7 @@
       "title": "Swing Low Sweet Chariot",
       "composer": "traditional",
       "body": [
+        "{title}Swing Low{title}",
         "{start_of_chorus}",
         "Swing [D]low, sweet [G]chari[D]ot,",
         "Comin’ for to carry me [A7]home.",
@@ -17,7 +18,7 @@
         "Comin’ for to carry me [A7]home.",
         "A [D]band of angels [G]comin’ after [D]me,",
         "Comin’ for to [A7]carry me [D]home.",
-        "{chorus}"
+        "{author}Traditional{author}"
       ]
     }
   ],

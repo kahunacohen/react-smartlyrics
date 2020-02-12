@@ -3,7 +3,8 @@ import { Route, Switch } from "react-router-dom";
 
 import { About } from "../../screens/about";
 import Songs from "../../screens/songs";
-import Song from "../../screens/song";
+import Show from "../../screens/song/show";
+import Edit from "../../screens/song/edit";
 
 export const MainContent = () => {
   return (
@@ -14,8 +15,11 @@ export const MainContent = () => {
         <Route path="/about">
           <About />
         </Route>
+        <Route path="/songs/:id/edit">
+          <Edit />
+        </Route>
         <Route path="/songs/:id">
-          <Song />
+          <Show />
         </Route>
         <Route path="/">
           <Songs />

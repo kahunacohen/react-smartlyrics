@@ -7,7 +7,7 @@ import { parseChordProToHtml } from "../../utils";
 
 
 
-const Song = () => {
+const Show = () => {
   let { id } = useParams();
   const items = useSelector((state: any) => state.items);
   const dispatch = useDispatch();
@@ -23,19 +23,13 @@ const Song = () => {
         <title>{items.title}</title>
       </Helmet>
       <h2>{items.title}</h2>
-      <h3>chordpro</h3>
       {items.body && (
         <div>
-          <pre>{items.body.join("\n")}</pre>
-          <h3>Parsed</h3>
           <div dangerouslySetInnerHTML={{__html: parseChordProToHtml(items.body)}}>
           </div>
-          {/* <pre>
-            {parseChordProToHtml(items.body)}
-          </pre> */}
         </div>
       )}
     </div>
   );
 };
-export default Song;
+export default Show;

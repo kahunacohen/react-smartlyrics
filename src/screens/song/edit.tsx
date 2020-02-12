@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet";
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { Button, Form, FormGroup, Label, Input, FormText } from "reactstrap";
 import { itemsFetchData } from "../../store/actions";
 import { useDispatch, useSelector } from "react-redux";
 import { parseChordProToHtml } from "../../utils";
@@ -24,11 +25,19 @@ const Detail = () => {
       <Helmet>
         <title>{items.title}</title>
       </Helmet>
-      <h2>{items.title}</h2>
-      <h3>chordpro</h3>
       {items.body && (
         <div>
-          <pre>{items.body.join("\n")}</pre>
+          <FormGroup>
+            <Label for="chorpro">Chordpro</Label>
+            <Input
+              rows={items.body.length}
+              size="500"
+              type="textarea"
+              name="chordpro"
+              id="chorpro"
+              value={items.body.join("\n")}
+            />
+          </FormGroup>
           <h3>Parsed</h3>
           <div
             dangerouslySetInnerHTML={{

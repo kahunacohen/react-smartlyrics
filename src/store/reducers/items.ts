@@ -1,4 +1,4 @@
-import { CHORD_PRO_CHANGED, CHORD_PRO_CHANGED_TXT } from "../actions";
+import { CHORD_PRO_CHANGED_TXT } from "../actions";
 
 export function itemsHasErrored(state = false, action: any) {
   switch (action.type) {

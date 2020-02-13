@@ -20,11 +20,13 @@ const Show = () => {
       <Helmet>
         <title>{items.title}</title>
       </Helmet>
+      <a href={`/songs/${id}/edit`}>Edit</a>
+
       {items.body && (
         <div>
           <div
             dangerouslySetInnerHTML={{
-              __html: parseChordProToHtml(items.body)
+              __html: parseChordProToHtml(items.body.join("\n"))
             }}
           ></div>
         </div>

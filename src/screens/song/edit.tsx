@@ -2,10 +2,7 @@ import { Helmet } from "react-helmet";
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { FormGroup, Label, Input } from "reactstrap";
-import {
-  itemsFetchData,
-  chordProChangedTxt
-} from "../../store/actions";
+import { itemsFetchData, chordProChangedTxt } from "../../store/actions";
 import { useDispatch, useSelector } from "react-redux";
 import { parseChordProToHtml } from "../../utils";
 
@@ -13,7 +10,7 @@ import "./edit.css";
 
 const Detail = () => {
   // State vars.
-  let { id } = useParams();
+  const { id } = useParams();
   const items = useSelector((state: any) => {
     return state.items;
   });
@@ -27,17 +24,11 @@ const Detail = () => {
     dispatch(itemsFetchData(`http://localhost:3000/songs/${id}`));
   }, [dispatch, id]);
 
-  const handleChordProChange = (chordPro: string) => {
-    dispatch(chordProChangedTxt(chordPro));
-  };
-
   const renderFromChordPro = (
-    chordProOnLoad: Array<string>,
+    chordProOnLoad: string,
     newChordPro: string | null
   ) => {
-    const chordProToRender = newChordPro
-      ? newChordPro.split("\n")
-      : chordProOnLoad;
+    const chordProToRender = newChordPro || chordProOnLoad;
     return parseChordProToHtml(chordProToRender);
   };
   return (
@@ -56,12 +47,17 @@ const Detail = () => {
               name="chordpro"
               id="chorpro"
               defaultValue={items.body.join("\n")}
-              onChange={(evt: any) => handleChordProChange(evt.target.value)}
+              onChange={(evt: any) =>
+                dispatch(chordProChangedTxt(evt.target.value))
+              }
             />
           </FormGroup>
           <div
             dangerouslySetInnerHTML={{
-              __html: renderFromChordPro(items.body, chordProChangedTxtState)
+              __html: renderFromChordPro(
+                items.body.join("\n"),
+                chordProChangedTxtState
+              )
             }}
           ></div>
         </div>

@@ -7,8 +7,8 @@ export const About = (props: any) => {
       <Helmet>
         <title>About</title>
       </Helmet>
-      <h2>About</h2>
-      <p>About</p>
+      <h2>About SmartLyrics</h2>
+      <p>SmartLyrics</p>
     </div>
   );
 };

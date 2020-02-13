@@ -1,8 +1,8 @@
 import { Helmet } from "react-helmet";
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { Button, Form, FormGroup, Label, Input, FormText } from "reactstrap";
-import { itemsFetchData } from "../../store/actions";
+import { FormGroup, Label, Input } from "reactstrap";
+import { itemsFetchData, chordProChanged } from "../../store/actions";
 import { useDispatch, useSelector } from "react-redux";
 import { parseChordProToHtml } from "../../utils";
 
@@ -20,6 +20,10 @@ const Detail = () => {
   useEffect(() => {
     dispatch(itemsFetchData(`http://localhost:3000/songs/${id}`));
   }, [dispatch, id]);
+  const handleChordProChange = (evt: any) => {
+    console.log("here");
+    dispatch(chordProChanged);
+  };
   return (
     <div>
       <Helmet>
@@ -35,7 +39,8 @@ const Detail = () => {
               type="textarea"
               name="chordpro"
               id="chorpro"
-              value={items.body.join("\n")}
+              defaultValue={items.body.join("\n")}
+              onChange={handleChordProChange}
             />
           </FormGroup>
           <h3>Parsed</h3>

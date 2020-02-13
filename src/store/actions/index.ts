@@ -33,3 +33,13 @@ export function itemsFetchData(url: string) {
       .catch(() => dispatch(itemsHasErrored(true)));
   };
 }
+
+export const CHORD_PRO_CHANGED = "CHORD_PRO_CHANGED";
+export function chordProChanged() {
+  console.log("hey");
+  return (dispatch: Function) => {
+    dispatch({
+      type: CHORD_PRO_CHANGED
+    });
+  };
+}

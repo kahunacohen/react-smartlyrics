@@ -1,3 +1,5 @@
+import { CHORD_PRO_CHANGED } from "../actions";
+
 export function itemsHasErrored(state = false, action: any) {
   switch (action.type) {
     case "ITEMS_HAS_ERRORED":
@@ -20,5 +22,14 @@ export function items(state = [], action: any) {
       return action.items;
     default:
       return state;
+  }
+}
+
+export function chordProChanged(state = false, action: any) {
+  switch (action.type) {
+    case CHORD_PRO_CHANGED:
+      return true;
+    default:
+      return false;
   }
 }

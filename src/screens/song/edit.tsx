@@ -2,17 +2,26 @@ import { Helmet } from "react-helmet";
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { FormGroup, Label, Input } from "reactstrap";
-import { itemsFetchData, chordProChanged, chordProChangedTxt } from "../../store/actions";
+import {
+  itemsFetchData,
+  chordProChanged,
+  chordProChangedTxt
+} from "../../store/actions";
 import { useDispatch, useSelector } from "react-redux";
 import { parseChordProToHtml } from "../../utils";
 
 import "./edit.css";
 
 const Detail = () => {
+  // State vars.
   let { id } = useParams();
   const items = useSelector((state: any) => {
     return state.items;
   });
+  const chordProChangedTxtState: string | null = useSelector(
+    (state: any) => state.chordProChangedTxt
+  );
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -22,12 +31,18 @@ const Detail = () => {
   const handleChordProChange = (chordPro: string) => {
     dispatch(chordProChanged(true));
     dispatch(chordProChangedTxt(chordPro));
-    setTimeout(() => dispatch(chordProChanged(false)), 500)
+    setTimeout(() => dispatch(chordProChanged(false)), 500);
   };
 
-  const renderFromChordPro = () => {
-    return parseChordProToHtml(items.body)
-  }
+  const renderFromChordPro = (
+    chordProOnLoad: Array<string>,
+    newChordPro: string | null
+  ) => {
+    const chordProToRender = newChordPro
+      ? newChordPro.split("\n")
+      : chordProOnLoad;
+    return parseChordProToHtml(chordProToRender);
+  };
   return (
     <div>
       <Helmet>
@@ -49,7 +64,7 @@ const Detail = () => {
           </FormGroup>
           <div
             dangerouslySetInnerHTML={{
-              __html: renderFromChordPro()
+              __html: renderFromChordPro(items.body, chordProChangedTxtState)
             }}
           ></div>
         </div>

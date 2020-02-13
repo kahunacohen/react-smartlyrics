@@ -39,6 +39,6 @@ export function chordProChangedTxt(state = null, action: any) {
     case CHORD_PRO_CHANGED_TXT:
       return action.chordProChangedTxt;
     default:
-      return null;
+      return state;
   }
 }

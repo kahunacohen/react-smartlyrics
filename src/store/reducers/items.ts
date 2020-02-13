@@ -1,4 +1,4 @@
-import { CHORD_PRO_CHANGED } from "../actions";
+import { CHORD_PRO_CHANGED, CHORD_PRO_CHANGED_TXT } from "../actions";
 
 export function itemsHasErrored(state = false, action: any) {
   switch (action.type) {
@@ -31,5 +31,14 @@ export function chordProChanged(state = false, action: any) {
       return action.chordProChanged;
     default:
       return false;
+  }
+}
+
+export function chordProChangedTxt(state = null, action: any) {
+  switch (action.type) {
+    case CHORD_PRO_CHANGED_TXT:
+      return action.chordProChangedTxt;
+    default:
+      return null;
   }
 }

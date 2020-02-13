@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet";
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { FormGroup, Label, Input } from "reactstrap";
-import { itemsFetchData, chordProChanged } from "../../store/actions";
+import { itemsFetchData, chordProChanged, chordProChangedTxt } from "../../store/actions";
 import { useDispatch, useSelector } from "react-redux";
 import { parseChordProToHtml } from "../../utils";
 
@@ -19,8 +19,9 @@ const Detail = () => {
     dispatch(itemsFetchData(`http://localhost:3000/songs/${id}`));
   }, [dispatch, id]);
 
-  const handleChordProChange = (evt: any) => {
+  const handleChordProChange = (chordPro: string) => {
     dispatch(chordProChanged(true));
+    dispatch(chordProChangedTxt(chordPro));
     setTimeout(() => dispatch(chordProChanged(false)), 500)
   };
 
@@ -43,7 +44,7 @@ const Detail = () => {
               name="chordpro"
               id="chorpro"
               defaultValue={items.body.join("\n")}
-              onChange={handleChordProChange}
+              onChange={(evt: any) => handleChordProChange(evt.target.value)}
             />
           </FormGroup>
           <div

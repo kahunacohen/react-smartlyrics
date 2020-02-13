@@ -43,3 +43,13 @@ export function chordProChanged(changed: boolean) {
     });
   };
 }
+
+export const CHORD_PRO_CHANGED_TXT = "CHORD_PRO_CHANGED_TXT";
+export function chordProChangedTxt(chordProChangedTxt: string) {
+  return (dispatch: Function) => {
+    dispatch({
+      type: CHORD_PRO_CHANGED_TXT,
+      chordProChangedTxt: chordProChangedTxt
+    });
+  };
+}

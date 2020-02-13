@@ -10,7 +10,8 @@ const store = configureStore({
   items: [],
   itemsHasErrored: false,
   itemsIsLoading: true,
-  
+  chordProChanged: false,
+  chordProChangedTxt: null
 });
 
 const App = () => {

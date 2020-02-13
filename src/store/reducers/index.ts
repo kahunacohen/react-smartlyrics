@@ -3,11 +3,13 @@ import {
   items,
   itemsHasErrored,
   itemsIsLoading,
-  chordProChanged
+  chordProChanged,
+  chordProChangedTxt
 } from "./items";
 export default combineReducers({
   items,
   itemsHasErrored,
   itemsIsLoading,
-  chordProChanged
+  chordProChanged,
+  chordProChangedTxt
 });

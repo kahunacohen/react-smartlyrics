@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet";
 import React, { useEffect } from "react";
 import { itemsFetchData } from "../../store/actions";
 import { useDispatch, useSelector } from "react-redux";
-import { FormGroup, Input, Table } from "reactstrap";
+import { Table } from "reactstrap";
 import { SongI } from "../../types";
 
 const Songs = () => {

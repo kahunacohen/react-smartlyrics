@@ -9,7 +9,8 @@ import configureStore from "./store/configureStore";
 const store = configureStore({
   items: [],
   itemsHasErrored: false,
-  itemsIsLoading: true
+  itemsIsLoading: true,
+  
 });
 
 const App = () => {

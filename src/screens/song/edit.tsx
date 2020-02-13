@@ -11,18 +11,15 @@ import "./edit.css";
 const Detail = () => {
   let { id } = useParams();
   const items = useSelector((state: any) => {
-    console.log(state);
     return state.items;
   });
-  const itemsIsLoading = useSelector((state: any) => state.itemsIsLoading);
-
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(itemsFetchData(`http://localhost:3000/songs/${id}`));
   }, [dispatch, id]);
   const handleChordProChange = (evt: any) => {
-    console.log("here");
-    dispatch(chordProChanged);
+    dispatch(chordProChanged(true));
+    setTimeout(() => dispatch(chordProChanged(false)), 500)
   };
   return (
     <div>

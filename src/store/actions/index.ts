@@ -35,11 +35,11 @@ export function itemsFetchData(url: string) {
 }
 
 export const CHORD_PRO_CHANGED = "CHORD_PRO_CHANGED";
-export function chordProChanged() {
-  console.log("hey");
+export function chordProChanged(changed: boolean) {
   return (dispatch: Function) => {
     dispatch({
-      type: CHORD_PRO_CHANGED
+      type: CHORD_PRO_CHANGED,
+      chordProChanged: changed
     });
   };
 }

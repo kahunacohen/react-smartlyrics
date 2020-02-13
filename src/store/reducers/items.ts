@@ -28,7 +28,7 @@ export function items(state = [], action: any) {
 export function chordProChanged(state = false, action: any) {
   switch (action.type) {
     case CHORD_PRO_CHANGED:
-      return true;
+      return action.chordProChanged;
     default:
       return false;
   }

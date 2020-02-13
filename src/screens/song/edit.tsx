@@ -14,13 +14,19 @@ const Detail = () => {
     return state.items;
   });
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(itemsFetchData(`http://localhost:3000/songs/${id}`));
   }, [dispatch, id]);
+
   const handleChordProChange = (evt: any) => {
     dispatch(chordProChanged(true));
     setTimeout(() => dispatch(chordProChanged(false)), 500)
   };
+
+  const renderFromChordPro = () => {
+    return parseChordProToHtml(items.body)
+  }
   return (
     <div>
       <Helmet>
@@ -40,10 +46,9 @@ const Detail = () => {
               onChange={handleChordProChange}
             />
           </FormGroup>
-          <h3>Parsed</h3>
           <div
             dangerouslySetInnerHTML={{
-              __html: parseChordProToHtml(items.body)
+              __html: renderFromChordPro()
             }}
           ></div>
         </div>

@@ -4,7 +4,6 @@ import { useParams } from "react-router-dom";
 import { FormGroup, Label, Input } from "reactstrap";
 import {
   itemsFetchData,
-  chordProChanged,
   chordProChangedTxt
 } from "../../store/actions";
 import { useDispatch, useSelector } from "react-redux";
@@ -29,9 +28,7 @@ const Detail = () => {
   }, [dispatch, id]);
 
   const handleChordProChange = (chordPro: string) => {
-    dispatch(chordProChanged(true));
     dispatch(chordProChangedTxt(chordPro));
-    setTimeout(() => dispatch(chordProChanged(false)), 500);
   };
 
   const renderFromChordPro = (

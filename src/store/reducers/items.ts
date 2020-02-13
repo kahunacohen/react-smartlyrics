@@ -25,15 +25,6 @@ export function items(state = [], action: any) {
   }
 }
 
-export function chordProChanged(state = false, action: any) {
-  switch (action.type) {
-    case CHORD_PRO_CHANGED:
-      return action.chordProChanged;
-    default:
-      return false;
-  }
-}
-
 export function chordProChangedTxt(state = null, action: any) {
   switch (action.type) {
     case CHORD_PRO_CHANGED_TXT:

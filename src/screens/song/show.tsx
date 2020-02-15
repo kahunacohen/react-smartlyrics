@@ -10,7 +10,7 @@ const Show = () => {
   const items = useSelector((state: any) => state.items);
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(itemsFetchData(`http://localhost:3000/songs/${id}`));
+    dispatch(itemsFetchData(`${process.env.REACT_APP_API_BASE_URL}/songs/${id}`));
   }, [dispatch, id]);
   if (items.body) {
     console.log(parseChordProToHtml(items.body));

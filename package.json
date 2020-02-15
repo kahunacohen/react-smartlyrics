@@ -7,8 +7,8 @@
     "eject": "react-scripts eject",
     "prettier": "node node_modules/prettier/bin-prettier.js --write './**/*.{ts,tsx,js,jsx}'",
     "sort": "node_modules/sort-package-json/cli.js",
-    "start": "react-scripts start",
-    "start_mock_server": "json-server mock_api/db.json",
+    "start": "source ./env/dev.env && react-scripts start",
+    "start_mock_server": "json-server --port 3001 mock_api/db.json",
     "test": "react-scripts test"
   },
   "browserslist": {

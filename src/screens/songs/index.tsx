@@ -9,7 +9,7 @@ const Songs = () => {
   const items = useSelector((state: any) => state.items);
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(itemsFetchData("http://localhost:3000/songs"));
+    dispatch(itemsFetchData(`${process.env.REACT_APP_API_BASE_URL}/songs`));
   }, [dispatch]);
   console.log(items);
 

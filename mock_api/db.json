@@ -4,7 +4,8 @@
       "id": 1,
       "kind": "song",
       "title": "Swing Low Sweet Chariot",
-      "composer": "traditional",
+      "composer": "Traditional",
+      "publicDomain": true,
       "body": [
         "{title: Swing Low Sweet Chariot}",
         "{key: G}",
@@ -22,10 +23,52 @@
         "Comin’ for to [A7]carry me [D]home.",
         "{author}Traditional{author}"
       ]
+    },
+    {
+      "id": 2,
+      "kind": "song",
+      "title": "Cortez the Killer",
+      "composer": "Neil Young",
+      "publicDomain": false, 
+      "body": [
+        "{title: Cortez the Killer}",
+        "{capo: 2}",
+        "{tuning: D A D G B D}",
+        "",
+        "{comment: [Verse 1]}",
+        "He came [Em7]dancin' across the water with his [D]galleons and guns",
+        "[Am7]Lookin' for the new world and the palace in the [Cm7]sun,",
+        "{comment: [Verse 2]}",
+        "On the [Em7]shore lay Montezuma with his [D]coca leaves and perls",
+        "In the [Am7]halls he often wandered with the secrets of the [Cm7]world",
+        "{comment: [Verse 3]}",
+        "And his [Em7]subjects gathered round him like the [D]leaves around a tree",
+        "In the [Am7]clothes of many colors for the angry gods to [Cm7]see",
+        "{comment: [Verse 4]}",
+        "And the [Em7]women all were beautiful and the [D]men stood straight and strong",
+        "They [Am7]offered life in sacrific so that others could go [Cm7]on.",
+        "{comment: [Verse 5]}",
+        "Hate was [Em7]just a legend and [D]war was never known",
+        "The [Am7]people worked together and they lifted many [Cm7]stones",
+        "They [Em7]carried them to the flatlands, and they [D]died along the way",
+        "But they [Am7]built up with their bare hands what they still can't do [Cm7]today",
+        "{comment: [Verse 6]}",
+        "And I [Em7]know she's living there and she [D]loves me to this day",
+        "I [Am7]still can't remember when or how I lost my [Cm7]way.",
+        "{comment: [Solo]}",
+        "{comment: [Outro]}",
+        "He came [Em7]dancin' across the water, [D]Cortez, Cortez, [Am7]oh what a killer"
+      ]
     }
   ],
   "comments": [
-    { "id": 1, "body": "some comment", "postId": 1 }
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
   ],
-  "profile": { "name": "typicode" }
+  "profile": {
+    "name": "typicode"
+  }
 }

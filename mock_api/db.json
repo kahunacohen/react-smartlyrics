@@ -29,7 +29,7 @@
       "kind": "song",
       "title": "Cortez the Killer",
       "composer": "Neil Young",
-      "publicDomain": false, 
+      "publicDomain": false,
       "body": [
         "{title: Cortez the Killer}",
         "{composer: Neil Young}",
@@ -69,13 +69,13 @@
       "kind": "song",
       "title": "Wildfire",
       "composer": "Mandolin Orange",
-      "publicDomain": false, 
+      "publicDomain": false,
       "body": [
         "{title: Wildfire}",
         "{composer: Mandolin Orange}",
         "{start_of_verse: 1}",
-        "[D/G]Brave men fall with a [Asus]battle cry", 
-        "[G]Tears fill the eyes of their loved ones and their brothers in [D/G]arms", 
+        "[D/G]Brave men fall with a [Asus]battle cry",
+        "[G]Tears fill the eyes of their loved ones and their brothers in [D/G]arms",
         "so it [Asus]went for Joseph [G]Warren",
         "It [D]should have been different, it [Asus]could have been easy",
         "His [G]rank could have saved him",
@@ -87,7 +87,19 @@
         "[D]Wi-[Asus]ild   [G]fire",
         "[D]Wi-[Asus]ild   [G]fire",
         "{end_of_chorus}",
-        ""
+        "",
+        "{start_of_verse: 2}",
+        "From the ashes grew sweet liberty",
+        "Like the seeds of the pines when the forest burns",
+        "They open up, grow and burn again",
+        "It should have been different, it could have been easy",
+        "But too much money rolled in to ever end slavery",
+        "The cry for war spread like wildfire",
+        "{end_of_verse: 2}",
+        "",
+        "{comment: Chorus}",
+        "",
+        "foo"
       ]
     }
   ],

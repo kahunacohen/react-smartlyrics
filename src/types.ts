@@ -1,5 +1,6 @@
 export interface SongI {
-  id: number;
-  title: string;
   composer: string;
+  id: number;
+  publicDomain: boolean;
+  title: string;
 }

@@ -1,19 +1,20 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Nav, NavItem, NavLink, Navbar, NavbarBrand } from "reactstrap";
 
 export const Header = () => {
   return (
     <header>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Songs</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-        </ul>
-      </nav>
+      <Navbar color="light" light expand="md">
+        <NavbarBrand href="/">Smartlyrics</NavbarBrand>
+        <Nav className="mr-auto" navbar>
+          <NavItem>
+            <NavLink href="/songs/">Songs</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink href="/about/">About</NavLink>
+          </NavItem>
+        </Nav>
+      </Navbar>
     </header>
   );
 };

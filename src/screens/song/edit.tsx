@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet";
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { FormGroup, Label, Input } from "reactstrap";
+import { FormGroup, Input } from "reactstrap";
 import { itemsFetchData, chordProChangedTxt } from "../../store/actions";
 import { useDispatch, useSelector } from "react-redux";
 import { parseChordProToHtml } from "../../utils";
@@ -34,34 +34,37 @@ const Detail = () => {
     return parseChordProToHtml(chordProToRender);
   };
   return (
-    <div>
+    <div className="container">
       <Helmet>
-        <title>{items.title}</title>
+        <title>{`Edit ${items.title}`}</title>
       </Helmet>
       {items.body && (
-        <div>
-          <FormGroup>
-            <Label for="chorpro">Chordpro</Label>
-            <Input
-              rows={items.body.length}
-              size="500"
-              type="textarea"
-              name="chordpro"
-              id="chorpro"
-              defaultValue={items.body.join("\n")}
-              onChange={(evt: any) =>
-                dispatch(chordProChangedTxt(evt.target.value))
-              }
-            />
-          </FormGroup>
-          <div
-            dangerouslySetInnerHTML={{
-              __html: renderFromChordPro(
-                items.body.join("\n"),
-                chordProChangedTxtState
-              )
-            }}
-          ></div>
+        <div className="row">
+          <div className="col-lg">
+            <FormGroup>
+              <Input
+                rows={items.body.length}
+                size="500"
+                type="textarea"
+                name="chordpro"
+                id="chorpro"
+                defaultValue={items.body.join("\n")}
+                onChange={(evt: any) =>
+                  dispatch(chordProChangedTxt(evt.target.value))
+                }
+              />
+            </FormGroup>
+          </div>
+          <div className="col-lg">
+            <div
+              dangerouslySetInnerHTML={{
+                __html: renderFromChordPro(
+                  items.body.join("\n"),
+                  chordProChangedTxtState
+                )
+              }}
+            ></div>
+          </div>
         </div>
       )}
     </div>

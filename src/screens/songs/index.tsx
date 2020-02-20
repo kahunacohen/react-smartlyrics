@@ -24,6 +24,8 @@ const Songs = () => {
             <th></th>
             <th>Title</th>
             <th>Composer</th>
+            <th>Genres</th>
+            <th>Public Domain</th>
           </tr>
         </thead>
         <tbody>
@@ -38,6 +40,8 @@ const Songs = () => {
                     <a href={`/songs/${song.id}`}>{song.title}</a>
                   </td>
                   <td>{song.composer}</td>
+                  <td>folk</td>
+                  <td>{song.publicDomain ? "yes" : "no"}</td>
                 </tr>
               );
             })}

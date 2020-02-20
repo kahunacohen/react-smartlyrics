@@ -1,7 +1,7 @@
 import ChordSheetJS from "chordsheetjs";
 
 export function parseChordProToHtml(chordPro: string) {
-  console.log('parsed')
+  console.log("parsed");
   const song = new ChordSheetJS.ChordProParser().parse(chordPro);
   console.log(song);
   return new ChordSheetJS.HtmlTableFormatter().format(

@@ -34,7 +34,7 @@ const Detail = () => {
     return parseChordProToHtml(chordProToRender);
   };
   return (
-    <div className="container">
+    <div>
       <Helmet>
         <title>{`Edit ${items.title}`}</title>
       </Helmet>

@@ -15,7 +15,7 @@ const store = configureStore({
 
 const App = () => {
   return (
-    <div className="container">
+    <div className="container-fluid">
       <Provider store={store}>
         <Router>
           <Head />

@@ -1,21 +1,20 @@
 import React from "react";
 
-
 export const Header = () => {
   return (
     <header>
-      
-      {/* <Navbar color="light" light expand="md">
-        <NavbarBrand href="/">Smartlyrics</NavbarBrand>
-        <Nav className="mr-auto" navbar>
-          <NavItem>
-            <NavLink href="/songs/">Songs</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink href="/about/">About</NavLink>
-          </NavItem>
-        </Nav>
-      </Navbar> */}
+      <ul className="nav nav-pills">
+        <li className="nav-item">
+          <a className="nav-link active" href="/songs/">
+            Songs
+          </a>
+        </li>
+        <li className="nav-item">
+          <a className="nav-link" href="/about/">
+            about
+          </a>
+        </li>
+      </ul>
     </header>
   );
 };

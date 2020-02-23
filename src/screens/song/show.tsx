@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet";
-import React, { useEffect } from "react";
+import React, { Fragment, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { itemsFetchData } from "../../store/actions";
 import { useDispatch, useSelector } from "react-redux";
@@ -18,20 +18,22 @@ const Show = () => {
     console.log(parseChordProToHtml(items.body));
   }
   return (
-    <div>
+    <div className="col-12">
       <Helmet>
         <title>{items.title}</title>
       </Helmet>
-      <a href={`/songs/${id}/edit`}>Edit</a>
 
       {items.body && (
-        <div>
+        <Fragment>
+          <p>
+            <a href={`/songs/${id}/edit`}>Edit</a>
+          </p>
           <div
             dangerouslySetInnerHTML={{
               __html: parseChordProToHtml(items.body.join("\n"))
             }}
           ></div>
-        </div>
+        </Fragment>
       )}
     </div>
   );

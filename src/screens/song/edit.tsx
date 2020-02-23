@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet";
-import React, { useEffect } from "react";
+import React, { Fragment, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { itemsFetchData, chordProChangedTxt } from "../../store/actions";
 import { useDispatch, useSelector } from "react-redux";
@@ -33,28 +33,25 @@ const Detail = () => {
     return parseChordProToHtml(chordProToRender);
   };
   return (
-    <div>
+    <Fragment>
       <Helmet>
         <title>{`Edit ${items.title}`}</title>
       </Helmet>
       {items.body && (
-        <div className="row">
-          <div className="col-lg">
-            {/* <FormGroup>
-              <Input
-                rows={items.body.length}
-                size="500"
-                type="textarea"
-                name="chordpro"
-                id="chorpro"
-                defaultValue={items.body.join("\n")}
-                onChange={(evt: any) =>
-                  dispatch(chordProChangedTxt(evt.target.value))
-                }
-              />
-            </FormGroup> */}
+        <Fragment>
+          <div className="col-6">
+            <textarea
+              className="form-control"
+              rows={items.body.length}
+              name="chordpro"
+              id="chordpro"
+              defaultValue={items.body.join("\n")}
+              onChange={(evt: any) =>
+                dispatch(chordProChangedTxt(evt.target.value))
+              }
+            ></textarea>
           </div>
-          <div className="col-lg">
+          <div className="col-6">
             <div
               dangerouslySetInnerHTML={{
                 __html: renderFromChordPro(
@@ -64,9 +61,9 @@ const Detail = () => {
               }}
             ></div>
           </div>
-        </div>
+        </Fragment>
       )}
-    </div>
+    </Fragment>
   );
 };
 export default Detail;

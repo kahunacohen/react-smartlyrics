@@ -13,11 +13,11 @@ const Songs = () => {
   console.log(items);
 
   return (
-    <div>
+    <div className="col-12">
       <Helmet>
         <title>Songs</title>
       </Helmet>
-      {/* <Table>
+      <table className="table table-striped">
         <thead>
           <tr>
             <th></th>
@@ -45,7 +45,7 @@ const Songs = () => {
               );
             })}
         </tbody>
-      </Table> */}
+      </table>
     </div>
   );
 };

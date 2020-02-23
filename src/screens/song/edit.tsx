@@ -1,7 +1,6 @@
 import { Helmet } from "react-helmet";
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { FormGroup, Input } from "reactstrap";
 import { itemsFetchData, chordProChangedTxt } from "../../store/actions";
 import { useDispatch, useSelector } from "react-redux";
 import { parseChordProToHtml } from "../../utils";
@@ -41,7 +40,7 @@ const Detail = () => {
       {items.body && (
         <div className="row">
           <div className="col-lg">
-            <FormGroup>
+            {/* <FormGroup>
               <Input
                 rows={items.body.length}
                 size="500"
@@ -53,7 +52,7 @@ const Detail = () => {
                   dispatch(chordProChangedTxt(evt.target.value))
                 }
               />
-            </FormGroup>
+            </FormGroup> */}
           </div>
           <div className="col-lg">
             <div

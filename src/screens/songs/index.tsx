@@ -2,7 +2,6 @@ import { Helmet } from "react-helmet";
 import React, { useEffect } from "react";
 import { itemsFetchData } from "../../store/actions";
 import { useDispatch, useSelector } from "react-redux";
-import { Table } from "reactstrap";
 import { SongI } from "../../types";
 
 const Songs = () => {
@@ -18,7 +17,7 @@ const Songs = () => {
       <Helmet>
         <title>Songs</title>
       </Helmet>
-      <Table>
+      {/* <Table>
         <thead>
           <tr>
             <th></th>
@@ -46,7 +45,7 @@ const Songs = () => {
               );
             })}
         </tbody>
-      </Table>
+      </Table> */}
     </div>
   );
 };

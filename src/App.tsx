@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Fragment} from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Provider } from "react-redux";
 
@@ -6,6 +6,7 @@ import { Head } from "./components/head";
 import { Header } from "./components/header";
 import { MainContent } from "./components/main-content";
 import configureStore from "./store/configureStore";
+
 const store = configureStore({
   items: [],
   itemsHasErrored: false,
@@ -15,7 +16,7 @@ const store = configureStore({
 
 const App = () => {
   return (
-    <div className="container-fluid">
+    <Fragment>
       <Provider store={store}>
         <Router>
           <Head />
@@ -27,7 +28,7 @@ const App = () => {
           </div>
         </Router>
       </Provider>
-    </div>
+    </Fragment>
   );
 };
 

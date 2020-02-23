@@ -1,6 +1,9 @@
 import React from "react";
+import {useLocation} from "react-router-dom";
 
 export const Header = () => {
+  const path = useLocation().pathname.split("/")[1];
+  console.log(path);
   return (
     <header>
       <ul className="nav nav-pills">

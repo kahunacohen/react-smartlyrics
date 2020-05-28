@@ -71,7 +71,7 @@
       "composer": "Mandolin Orange",
       "publicDomain": false,
       "body": [
-        "{title: Wildfire}",  
+        "{title: Wildfire}",
         "{composer: Mandolin Orange}",
         "{capo: 4}",
         "{key: B}",
@@ -143,8 +143,8 @@
         "[Fmadd9]",
         "",
         "[G]It's been a hard [C]day's [G]night, and I've been [F]working like a [G]dog",
-        "It's been a hard [C]day's [G]night, I should be [F]sleeping like a [G]log",  
-        "But when I [C7]get home to you I'll [C#7]find the [D7]things that you do",    
+        "It's been a hard [C]day's [G]night, I should be [F]sleeping like a [G]log",
+        "But when I [C7]get home to you I'll [C#7]find the [D7]things that you do",
         "Will make me [G]feel al[C]right",
         "You know I work all day to get you money to buy you things",
         "And it's worth it just to hear you say you're going to give me everything",
@@ -168,16 +168,48 @@
         "You know I feel alright",
         "You know I feel alright"
       ]
-    }
-  ],
-  "comments": [
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "id": 5,
+      "kind": "song",
+      "title": "There Was a Time",
+      "composer": "Mandoline Orange",
+      "publicDomain": false,
+      "body": [
+        "If I showed up to your wedding",
+        "Wearing black and blue and red",
+        "Wouldn't it seem fitting",
+        "Cause I'm as bruised and angry as I've ever been.",
+        "",
+        "",
+        "There was a time when I called you,",
+        "There was a time when I called you mine.",
+        "",
+        "",
+        "This old house is cold and empty",
+        "Even these old walls have been.",
+        "I laid down.",
+        "You're not with me.",
+        "Waking up just seems a sin.",
+        "",
+        "",
+        "There was a time when I called you,",
+        "There was a time when I called you mine.",
+        "",
+        "",
+        "There's no gold on either side of the Mississippi,",
+        "No",
+        "",
+        "",
+        "There's no gold on either side of the Mississippi,",
+        "No silver left in this world to find.",
+        "Precious metal and precious memories",
+        "Slip away, slip away from your finger and your mind.",
+        "",
+        "",
+        "There was a time when I called you,",
+        "There was a time when I called you mine."
+      ]
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }

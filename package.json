@@ -34,6 +34,7 @@
     "bootstrap": "^4.4.1",
     "chordsheetjs": "^2.9.1",
     "node-fetch": "^2.6.0",
+    "node-lyrics": "^2.1.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
